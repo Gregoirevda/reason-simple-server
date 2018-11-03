@@ -81,7 +81,7 @@ let handler = (~extraHandler, base, method, path, headers) => {
   switch (method) {
   | "GET" => {
     let full_path = Filename.concat(base, "." ++ path);
-    serveStatic(~extraHandler=?, full_path, path, headers)
+    serveStatic(~extraHandler, full_path, path, headers)
   }
   | _ => Bad(401, "Method not allowed: " ++ method)
   }
